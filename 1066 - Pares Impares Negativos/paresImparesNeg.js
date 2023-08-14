@@ -11,15 +11,14 @@ let numPos = 0;
 let numPar = 0;
 let numImpar = 0;
 let numNeg = 0;
-for (let x in lines){
-    if ( parseInt(lines[x]) < 0)
-        numNeg++;
-    if ( parseInt(lines[x]) > 0)
-        numPos++;
-    if (parseInt(lines[x]) % 2 === 0 )
-        numPar++
-    else 
-        numImpar++;
-}    
-
+for (let x in lines) {
+    if (!Number.isNaN(parseInt(lines[x]))) {
+        if (parseInt(lines[x]) % 2 === 0) numPar++;
+        else numImpar++;
+    
+        if (parseInt(lines[x]) > 0) numPos++;
+        else 
+        if (parseInt(lines[x]) < 0) numNeg++;
+    }
+}
 console.log(`${numPar} valor(es) par(es) \n${numImpar} valor(es) impar(es)\n${numPos} valor(es) positivo(s)\n${numNeg} valor(es) negativo(s)`);
