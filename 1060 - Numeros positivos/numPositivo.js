@@ -11,6 +11,6 @@ let numPos = 0;
 for (let x in lines){
     if ( parseFloat(lines[x]) >= 0){
         numPos++;
-    }
+    } 
 }
 console.log(numPos + ' valores positivos');
